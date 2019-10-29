@@ -50,7 +50,6 @@ form.addEventListener('submit', event => {
 
 // Select
 const firstname = document.querySelector('.first-name');
-console.log(firstname);
 firstname.addEventListener('select', event => {
    event.target.style.color = 'red'; 
 })
@@ -58,5 +57,9 @@ firstname.addEventListener('select', event => {
 // Focus
 firstname.addEventListener('focus', event => {
     event.target.style.backgroundColor = 'yellow';
+})
+
+firstname.addEventListener('blur', event => {
+    event.target.style.backgroundColor = '';
 })
 
