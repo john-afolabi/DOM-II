@@ -9,7 +9,9 @@ navItems.forEach(a => {
     a.addEventListener('mouseout', event => {
         event.currentTarget.style.color = '';
     })
-
+    a.addEventListener('click', event => {
+        event.preventDefault();
+    })
 });
 
 // Keydown
@@ -63,3 +65,12 @@ firstname.addEventListener('blur', event => {
     event.target.style.backgroundColor = '';
 })
 
+// Nesting similar events
+body.addEventListener('mouseover', event => {
+    body.style.backgroundColor = '#b5d5e0'
+})
+
+introText.addEventListener('mouseover', event => {
+    event.stopPropagation();
+    body.style.backgroundColor = ''
+})
