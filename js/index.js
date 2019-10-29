@@ -1,10 +1,15 @@
 // Your code goes here
-// Mouseover
+// Mouseover and Mouseout
 const navItems = Array.from(document.getElementsByClassName('nav-link'));
 navItems.forEach(a => {
     a.addEventListener('mouseover', event => {
         event.currentTarget.style.color = '#fdbb4f';
     })
+
+    a.addEventListener('mouseout', event => {
+        event.currentTarget.style.color = '';
+    })
+
 });
 
 // Keydown
@@ -29,3 +34,9 @@ logoHeading.addEventListener('wheel', event => {
 window.addEventListener('load', event => {
     alert('Page is fully loaded');
 });
+
+// Double click 
+const introText = document.getElementsByClassName('intro')[0].children[2];
+introText.addEventListener('dblclick', event => {
+    event.target.style.backgroundColor = '#ffebcd';
+})
